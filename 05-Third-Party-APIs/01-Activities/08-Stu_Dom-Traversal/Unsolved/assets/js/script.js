@@ -5,3 +5,4 @@ var rootEl = $('#root');
 rootEl.children('ul').children().css('background-color', 'white');
 // TODO: Starting from `rootEl`, create the jQuery statement that will add "O" to block the "X" from winning
 rootEl.children('ul').eq(2).children().eq(0).text('O');
+rootEl.children('ul').eq(0).children().eq(0).text('O');
