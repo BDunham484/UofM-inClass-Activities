@@ -4,6 +4,7 @@ var subtractButton = document.querySelector("#subtract");
 
 var count = localStorage.getItem("count");
 
+
 counter.textContent = count;
 
 addButton.addEventListener("click", function() {
