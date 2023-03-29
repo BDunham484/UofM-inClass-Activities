@@ -188,3 +188,7 @@ function resetGame() {
 }
 // Attaches event listener to button
 resetButton.addEventListener("click", resetGame);
+
+var testArr = 'billpullman'.split('');
+console.log(testArr);
+
