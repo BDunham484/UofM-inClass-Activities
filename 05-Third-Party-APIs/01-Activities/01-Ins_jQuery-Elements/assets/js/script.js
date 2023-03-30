@@ -56,6 +56,6 @@ for (var i = 0; i < abilities.length; i++) {
 console.log($('div'));
 
 // Alternatively use the `$.each` method
-// $.each(abilities, function(i, ability) {
-//    abilityEl.append("<div>" + ability + "</div>");
-// })
+$.each(abilities, function (i, ability) {
+  abilityEl.append("<div>" + ability + "</div>");
+})
