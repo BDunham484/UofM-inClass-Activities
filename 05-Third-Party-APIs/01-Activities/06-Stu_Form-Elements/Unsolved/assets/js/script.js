@@ -10,6 +10,8 @@ function handleFormSubmit(event) {
     console.log('Form Entry: ' + inputEl.val());
     shoppingListEl.append('<li>' + inputEl.val() + '</li>');
     $('input[type="text"]').val("");
+
+
 }
 // TODO: Add an event listener to the `shoppingFormEl` to handle submission
 shoppingFormEl.on('submit', handleFormSubmit);
