@@ -66,3 +66,8 @@ $(function () {
 
 // Add interaction here
 //
+$(function() {
+  skillsListEl.sortable({
+    placeholder: "Skillzzzzzz"
+  });
+})
