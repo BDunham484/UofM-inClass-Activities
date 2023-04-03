@@ -68,6 +68,6 @@ $(function () {
 //
 $(function() {
   skillsListEl.sortable({
-    placeholder: "Skillzzzzzz"
+    placeholder: "sortable-placeholder"
   });
 })
