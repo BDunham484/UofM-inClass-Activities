@@ -68,6 +68,6 @@ $(function () {
 //
 $(function() {
   skillsListEl.sortable({
-    placeholder: "sortable-placeholder"
+    placeholder: "ui-state-highlight"
   });
 })

@@ -19,5 +19,5 @@ $('#5a').text(uts.toString('MMM d, YYYY h:mm:ss'));
 // You can display the difference between two dayjs objects by using the dayjs
 // diff method.)
 var later = dayjs('2027-05-04');
-$('#6a').text(today.diff(later));
+$('#6a').text(today.diff(later, 'd'));
 
