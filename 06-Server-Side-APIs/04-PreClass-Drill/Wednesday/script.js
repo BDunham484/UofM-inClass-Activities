@@ -9,7 +9,10 @@ const averager = (arr) => {
     }
 
     let average = total/arr.length 
-    console.log(average);
+    
+    return average
 }
 
-averager(numArr);
+let result = averager(numArr);
+
+console.log(result);
