@@ -9,8 +9,8 @@ const noRepeats = (string) => {
             }
         }
     }
-
-
 }
+
+
 
 noRepeats(string);
