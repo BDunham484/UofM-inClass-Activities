@@ -29,8 +29,15 @@ var doubled = map(numbers, (element) => {
   return element * 2;
 });
 
+// brad added
+var tripled = numbers.map((element) => {
+  return element * 3;
+})
+
 // Prints `[ 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 ]`
 console.log(doubled);
+// brad added
+console.log(tripled);
 
 // --------------------------------------------------------------------------
 
@@ -56,6 +63,7 @@ console.log(evenNumbers);
 // --------------------------------------------------------------------------
 
 // 4. netflixQueue is an object for managing your netflix queue
+// brad - Switch all arrow function to regular function expressions inside object
 var netflixQueue = {
   queue: [
     "Mr. Nobody",
