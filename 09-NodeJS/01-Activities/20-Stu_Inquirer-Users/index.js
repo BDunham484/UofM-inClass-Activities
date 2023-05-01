@@ -15,16 +15,19 @@ inquirer
             name: 'languages'
         },
         {
-            type: 'input',
+            type: 'checkbox',
             message: 'What is your preferred method of communication?',
-            name: 'preference'
+            name: 'preference',
+            choices: ['text', 'phonecall', 'email']
         }
     ])
     .then((response) => {
+        const {username, languages, preference} = response
+
         const data = `
-${response.username}
-${response.languages}
-${response.preference}
+${username}
+${languages}
+${preference}
         `
         fs.writeFile('log.txt', data, (err) =>
             err ? console.error(err) : console.log('Success!')
