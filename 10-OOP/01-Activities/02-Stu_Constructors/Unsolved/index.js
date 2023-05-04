@@ -12,7 +12,7 @@ function BlogPost(authorName, title, text, createdOn) {
 // TODO: Include a method called 'printMetaData()' that prints a message in the console saying 'Created by (authorName) on (createdOn)'
 
 // TODO: Create a new object using the 'BlogPost' constructor
-const newPost = new BlogPost('Brad', 'How to get rich by thinking about it', 'hellllooooo', 'today')
+const newPost = new BlogPost('Brad', 'How to get rich by thinking about it', 'hellllooooo', new Date().toDateString())
 
 // TODO: Call the 'printMetaData()' method on the new object
 newPost.printMetaData();
