@@ -11,6 +11,7 @@ function BlogPost(authorName, title, text, createdOn) {
 }
 
 // TODO: Add a comment describing the purpose of `.prototype` in this method declaration
+// inheritable methods assigned to arrays and objects
 BlogPost.prototype.addComent = function(comment) {
   this.comments.push(comment);
 };
@@ -26,3 +27,5 @@ post.addComent('Nice post, I like it!');
 
 // TODO: Add a comment describing what you expect to see printed in the console
 console.log(post.comments);
+
+
