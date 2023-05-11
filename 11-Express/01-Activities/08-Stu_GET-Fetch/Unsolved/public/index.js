@@ -1,13 +1,19 @@
 const petEl = document.getElementById('pets');
 const termButton = document.getElementById('term-btn');
 
-const getPets = () =>
+const getPets = async () =>
   fetch('/api/terms', {
-    method: 'POST',
-    body: '',
+    method: 'GET',
   })
     .then((res) => res.json())
     .then((data) => data);
+// const getPets = () =>
+//   fetch('/api/terms', {
+//     method: 'POST',
+//     body: '',
+//   })
+//     .then((res) => res.json())
+//     .then((data) => data);
 
 const renderPet = (pet) => {
   const cardEl = document.createElement('div');

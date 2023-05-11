@@ -13,6 +13,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/pets', (req, res) => res.json(petData));
+app.get('/api/terms', (req, res) => res.json(petData));
 
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`);
