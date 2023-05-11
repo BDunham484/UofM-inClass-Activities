@@ -12,7 +12,8 @@ readFile('./data/post.json', 'utf-8').then((json) => {
   const newBlog = new BlogPost( title, text, author, createdOn)
   // TODO: Write the html to file
   writeFile('./dist/index.html', newBlog.render())
-});
-
-
+})
 // TODO: print a message in the console only after the html file is written.
+.then(() => {
+  console.log('Created index.html')
+})

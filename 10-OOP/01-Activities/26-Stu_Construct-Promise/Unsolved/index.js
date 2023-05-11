@@ -1,6 +1,7 @@
 const http = require('http');
 
 // TODO: What does this function return?
+// a promise
 const asyncRequest = (url) =>
   new Promise((resolve, reject) => {
     let error;

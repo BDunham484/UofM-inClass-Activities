@@ -19,5 +19,5 @@ class Component {
     }
 }
 
-// const newCom = new Component(['1', '2', '3']).renderInnerHTML()
+
 module.exports = Component;
