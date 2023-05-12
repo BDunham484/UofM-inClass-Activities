@@ -4,7 +4,7 @@ const reviewInput = document.getElementById('review');
 const reviewForm = document.getElementById('review-form');
 
 // TODO: Add a comment explaining the functionality of this helper function
-const postReview = (review) =>
+const postReview = (review) => 
   // TODO: Add a comment explaining what sort of data we need to provide when invoking the fetch function for a POST request
   fetch('/api/reviews', {
     method: 'POST',
