@@ -15,8 +15,6 @@ diagnostics.get('/', (req, res) => {
 diagnostics.post('/', (req, res) => {
   // TODO: Logic for appending data to the db/diagnostics.json file
   console.info(`${req.method} request received to add diagnostics`);
-  console.log('diagnostic butts')
-  console.log(req.body)
 
   const { errors } = req.body
 

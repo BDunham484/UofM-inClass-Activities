@@ -139,10 +139,7 @@ const submitDiagnostics = (submissionObj) => {
   .then((response) => {
     response.json()
   }) 
-  .then((data) => {
-    console.log('data butts')
-    return data
-  })
+  .then((data) => data)
   .catch((error) => {
     console.error('Error: ', error);
   })
