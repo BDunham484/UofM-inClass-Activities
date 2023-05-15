@@ -28,69 +28,69 @@ app.get('/feedback', (req, res) =>
 );
 
 // GET Route for retrieving all the tips
-app.get('/api/tips', (req, res) => {
-  console.info(`${req.method} request received for tips`);
-  readFromFile('./db/tips.json').then((data) => res.json(JSON.parse(data)));
-});
+// app.get('/api/tips', (req, res) => {
+//   console.info(`${req.method} request received for tips`);
+//   readFromFile('./db/tips.json').then((data) => res.json(JSON.parse(data)));
+// });
 
 // POST Route for a new UX/UI tip
-app.post('/api/tips', (req, res) => {
-  console.info(`${req.method} request received to add a tip`);
+// app.post('/api/tips', (req, res) => {
+//   console.info(`${req.method} request received to add a tip`);
 
-  const { username, topic, tip } = req.body;
+//   const { username, topic, tip } = req.body;
 
-  if (req.body) {
-    const newTip = {
-      username,
-      tip,
-      topic,
-      tip_id: uuid(),
-    };
+//   if (req.body) {
+//     const newTip = {
+//       username,
+//       tip,
+//       topic,
+//       tip_id: uuid(),
+//     };
 
-    readAndAppend(newTip, './db/tips.json');
-    res.json(`Tip added successfully 🚀`);
-  } else {
-    res.error('Error in adding tip');
-  }
-});
+//     readAndAppend(newTip, './db/tips.json');
+//     res.json(`Tip added successfully 🚀`);
+//   } else {
+//     res.error('Error in adding tip');
+//   }
+// });
 
-// GET Route for retrieving all the feedback
-app.get('/api/feedback', (req, res) => {
-  console.info(`${req.method} request received for feedback`);
+// // GET Route for retrieving all the feedback
+// app.get('/api/feedback', (req, res) => {
+//   console.info(`${req.method} request received for feedback`);
 
-  readFromFile('./db/feedback.json').then((data) => res.json(JSON.parse(data)));
-});
+//   readFromFile('./db/feedback.json').then((data) => res.json(JSON.parse(data)));
+// });
 
 // POST Route for submitting feedback
-app.post('/api/feedback', (req, res) => {
-  // Log that a POST request was received
-  console.info(`${req.method} request received to submit feedback`);
+// app.post('/api/feedback', (req, res) => {
+//   // Log that a POST request was received
+//   console.info(`${req.method} request received to submit feedback`);
 
-  // Destructuring assignment for the items in req.body
-  const { email, feedbackType, feedback } = req.body;
+//   // Destructuring assignment for the items in req.body
+//   const { email, feedbackType, feedback } = req.body;
 
-  // If all the required properties are present
-  if (email && feedbackType && feedback) {
-    // Variable for the object we will save
-    const newFeedback = {
-      email,
-      feedbackType,
-      feedback,
-      feedback_id: uuid(),
-    };
+//   // If all the required properties are present
+//   if (email && feedbackType && feedback) {
+//     // Variable for the object we will save
+//     const newFeedback = {
+//       email,
+//       feedbackType,
+//       feedback,
+//       feedback_id: uuid(),
+//     };
 
-    readAndAppend(newFeedback, './db/feedback.json');
+//     readAndAppend(newFeedback, './db/feedback.json');
 
-    const response = {
-      status: 'success',
-      body: newFeedback,
-    };
+//     const response = {
+//       status: 'success',
+//       body: newFeedback,
+//     };
 
-    res.json(response);
-  } else {
-    res.json('Error in posting feedback');
-  }
-});
+//     res.json(response);
+//   } else {
+//     res.json('Error in posting feedback');
+//   }
+// });
 
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT} 🚀`)
