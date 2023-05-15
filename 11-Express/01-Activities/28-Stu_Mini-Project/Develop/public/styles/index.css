@@ -1706,3 +1706,19 @@ label form [type='radio'] {
     align-content: center;
   }
 }
+
+
+/* 404 Styles Start */
+.flex-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a1a;
+  width: 100vw;
+  height: 100vh;
+}
+
+.flex-wrapper h1 {
+  color: antiquewhite;
+  letter-spacing: 2px;
+}
