@@ -3,12 +3,13 @@ const tips = require('express').Router();
 const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
 const uuid = require('../helpers/uuid')
 // TODO: GET Route for retrieving all the tips
-tips.get('/api/tips', (req, res) => {
+tips.get('/', (req, res) => {
     console.info(`${req.method} request received for tips`);
     readFromFile('./db/tips.json').then((data) => res.json(JSON.parse(data)));
 });
+
 // TODO: POST Route for a new UX/UI tip
-app.post('/api/tips', (req, res) => {
+tips.post('/', (req, res) => {
     console.info(`${req.method} request received to add a tip`);
 
     const { username, topic, tip } = req.body;

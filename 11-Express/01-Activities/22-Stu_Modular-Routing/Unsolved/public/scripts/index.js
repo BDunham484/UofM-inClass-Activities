@@ -48,7 +48,7 @@ const getTips = () =>
 
 // Post a new tip to the page
 const postTip = (tip) =>
-  fetch('api/tips', {
+  fetch('/api/tips', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

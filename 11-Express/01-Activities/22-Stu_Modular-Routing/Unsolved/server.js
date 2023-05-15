@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const api = require('./routes/index');
+const api = require('./routes/index.js');
 // const fs = require('fs');
 // const util = require('util');
 // const { readFromFile, readAndAppend } = require('./helpers/fsUtils');
@@ -15,7 +15,7 @@ const app = express();
 // Middleware for parsing JSON and urlencoded form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('./api', api);
+app.use('/api', api);
 
 app.use(express.static('public'));
 
@@ -50,7 +50,7 @@ app.get('/feedback', (req, res) =>
 //     };
 
 //     readAndAppend(newTip, './db/tips.json');
-//     res.json(`Tip added successfully 🚀`);
+//     res.json(`Tip added successfully `);
 //   } else {
 //     res.error('Error in adding tip');
 //   }

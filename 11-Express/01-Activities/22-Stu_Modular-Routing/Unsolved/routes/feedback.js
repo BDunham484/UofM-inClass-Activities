@@ -5,14 +5,14 @@ const uuid = require('../helpers/uuid')
 
 // TODO: GET Route for retrieving all the feedback
 // GET Route for retrieving all the feedback
-fb.get('/api/feedback', (req, res) => {
+fb.get('/', (req, res) => {
     console.info(`${req.method} request received for feedback`);
 
     readFromFile('./db/feedback.json').then((data) => res.json(JSON.parse(data)));
 });
 
 // TODO: POST Route for submitting feedback
-fb.post('/api/feedback', (req, res) => {
+fb.post('/', (req, res) => {
     // Log that a POST request was received
     console.info(`${req.method} request received to submit feedback`);
 
