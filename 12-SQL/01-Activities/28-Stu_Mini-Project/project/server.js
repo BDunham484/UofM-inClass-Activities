@@ -17,15 +17,25 @@ const db = mysql.createConnection(
         user: 'root',
         // MySQL password
         password: 'RootyTooty484',
-        database: 'miniProject_db'
+        database: 'movie_db'
     },
-    console.log(`Connected to the miniProject_db database.`)
+    console.log(`Connected to the movie_db database.`)
 );
 
 // Query database
-db.query('SELECT * FROM students', function (err, results) {
-    console.log(results);
-});
+
+
+app.get('/api/movies', function (req, res) {
+    let sql = 'SELECT * FROM movies';
+
+    db.query(sql, (err, results) => {
+        console.log(results);
+        res.json({
+            message: 'success',
+            data: results
+        })
+    });
+})
 
 // Default response for any other request (Not Found)
 app.use((req, res) => {
