@@ -33,7 +33,7 @@ Book.init(
     timestamps: false,
     underscored: true,
     modelName: 'book',
-    tableName: 'book',
+    freezeTableName: true,
   }
 );
 
