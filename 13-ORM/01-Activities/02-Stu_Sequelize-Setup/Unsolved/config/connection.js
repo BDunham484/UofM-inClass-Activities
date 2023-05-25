@@ -2,8 +2,8 @@ require('dotenv').config()
 const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize(
-  'library_db',
-  'root',
+  process.env.DB,
+  process.env.USER,
   process.env.PASSWORD,
   {
     host: 'localhost',
