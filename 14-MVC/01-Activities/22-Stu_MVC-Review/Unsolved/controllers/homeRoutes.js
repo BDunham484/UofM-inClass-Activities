@@ -5,13 +5,14 @@ router.get('/', async (req, res) => {
   // TODO: Render template with Sequelize data
   try {
     const userData = await User.findAll({
+      raw: true,
       attributes: { exclude: ['password']},
       order: [['name', 'ASC']],
     });
     
-    const users = userData.map((project) => project.get({ plain: true}));
+    // const users = userData.map((project) => project.get({ plain: true}));
 
-    res.render('homepage', { users });
+    res.render('homepage', { userData });
   } catch (err) {
     res.status(500).json(err);
   }
