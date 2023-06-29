@@ -6,7 +6,7 @@ const fibonacci = (position) => {
   if (position < 2) {
     return position;
   }
-
+  console.log(position)
   // The current value at this position is evaluated by adding the sum of the values at the two preceding positions of the sequence
   // By calling itself, we form a loop.
   // With each subsequent call smaller arguments are used until the base condition is reached
