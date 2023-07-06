@@ -3,7 +3,7 @@ const db = require('./config/connection');
 // Require model
 const { Genre } = require('./models');
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
@@ -63,6 +63,19 @@ app.post('/find-one-update/:genre', (req, res) => {
   // TODO: Write a route that will find the first instance of a document that contains a name with the value equal to 'Kids'
   // Update that name with the value given from the URL param
   // Return the updated document
+  Genre.findOneAndUpdate({ name: 'Kids' },
+    { name: req.params.genre },
+    { new: true },
+    (err, result) => {
+      if (result) {
+        console.log(result)
+        res.status(200).json(result);
+        console.log(`Updated: ${result}`);
+      } else {
+        console.log('Womp womp');
+        res.status(500).json({ message: 'you suck, yo. ' })
+      }
+    })
 });
 
 db.once('open', () => {
