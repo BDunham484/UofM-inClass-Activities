@@ -1,4 +1,4 @@
-// Service Worker registration code
+//// Service Worker registration code
 
 export const registerSW = () => {
   // Check that service workers are supported
