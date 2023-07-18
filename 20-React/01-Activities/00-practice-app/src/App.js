@@ -1,8 +1,8 @@
 import React from "react";
-import JSXVariables from "./components/JSXVariables";
+import Display from "./components/Display";
 
 function App() {
-  return <JSXVariables />;
+  return <Display />;
 }
 
 export default App;
