@@ -1,8 +1,8 @@
-import React from "react";
-import Counter from "./components/Counter";
+import React from 'react';
+import Form from './components/Form/index';
 
 function App() {
-  return <Counter />;
+  return <Form />;
 }
 
 export default App;
