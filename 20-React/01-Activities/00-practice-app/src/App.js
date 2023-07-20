@@ -1,5 +1,16 @@
-import OmdbContainer from './components/OmdbContainer';
+import React from "react";
+import Header from "./components/Header";
+import Section from "./components/Section";
+import Navbar from "./components/Navbar";
 
-export default function App() {
-  return <OmdbContainer />;
+function App() {
+  return (
+    <div>
+      <Navbar />
+      <Header />
+      <Section />
+    </div>
+  );
 }
+
+export default App;
