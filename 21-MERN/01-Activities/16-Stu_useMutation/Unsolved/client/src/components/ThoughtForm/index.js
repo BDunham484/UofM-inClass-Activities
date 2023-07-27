@@ -18,7 +18,7 @@ const ThoughtForm = () => {
 
     try {
       // TODO: Add code to execute asynchronous mutation function returned by `useMutation()` hook and pass in `formState` object
-      const { data } =  await addThought({
+      await addThought({
         variables: { ...formState }
       })
 
