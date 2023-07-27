@@ -1,15 +1,18 @@
 import React from 'react';
 // TODO: Add code to import the `useQuery()` hook from @apollo/client
+import { useQuery } from '@apollo/client';
 
 import ThoughtList from '../components/ThoughtList';
 
 // TODO: Add code to import the `QUERY_THOUGHTS` from utils/queries
+import { QUERY_THOUGHTS } from '../utils/queries';
 
 const Home = () => {
   // TODO: Add code to query for thought data using `useQuery()` and return the `loading` and `data` properties to use.
-
+  const { loading, data } = useQuery(QUERY_THOUGHTS);
+console.log(data);
   const thoughts = data?.thoughts || [];
-
+console.log(thoughts);
   return (
     <main>
       <div className="flex-row justify-center">
