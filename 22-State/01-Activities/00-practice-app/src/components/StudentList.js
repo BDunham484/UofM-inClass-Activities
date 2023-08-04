@@ -1,10 +1,18 @@
+// TODO: Import useReducer so that we can use it in this component
 import React, { useState } from 'react';
+
+// TODO: Import our type variables
+
+// TODO: Import our reducer
+
 // Import our custom useStudentContext hook to have access to the initial state
 import { useStudentContext } from '../utils/StudentContext';
 
 export default function StudentList() {
-  // Assign student related variables from our custom hook
-  const { students, addStudent, removeStudent, majors } = useStudentContext();
+  // The value property from our Student provider is made available from our custom hook. Here we pluck off the student array from our initial state.
+  const initialState = useStudentContext();
+
+  // TODO: Initialize `useReducer` hook.
 
   // Initialize state for new students and new student majors
   const [newStudentName, setNewStudentName] = useState('');
@@ -12,6 +20,7 @@ export default function StudentList() {
 
   return (
     <div>
+      {/* // TODO: Refactor to access `students` from our state object */}
       {students ? (
         <>
           <section className="student-list">
@@ -24,7 +33,9 @@ export default function StudentList() {
                   <th>Remove</th>
                 </tr>
               </thead>
+
               <tbody>
+                {/* // TODO: Refactor to access `students` from our state object */}
                 {students.map((student) => (
                   <tr key={student.id}>
                     <td>{student.id}</td>
@@ -33,7 +44,10 @@ export default function StudentList() {
                     <td>
                       <button
                         type="button"
-                        onClick={() => removeStudent(student.id)}
+                        onClick={() => {
+                          // TODO: Call dispatch method with an object containing type and payload
+                          // Your code here
+                        }}
                       >
                         <span role="img" aria-label="delete">
                           ✖️
@@ -44,32 +58,35 @@ export default function StudentList() {
                 ))}
               </tbody>
             </table>
+
             <div className="add-student">
               <input
-                onChange={(e) => setNewStudentName(e.target.value)}
+                value={state.studentName}
+                onChange={(e) =>
+                  dispatch({ type: SET_STUDENT_NAME, payload: e.target.value })
+                }
                 placeholder="New student name..."
                 type="text"
-                value={newStudentName}
               />
 
               <select
-                onChange={(e) => setNewStudentMajor(e.target.value)}
-                value={newStudentMajor}
+                onChange={(e) =>
+                  dispatch({ type: SET_STUDENT_MAJOR, payload: e.target.value })
+                }
+                value={state.studentMajor}
               >
                 <option>Choose major...</option>
+                {/* // TODO: Refactor to access `students` from our state object */}
                 {majors.map((major) => (
                   <option key={major} value={major}>
                     {major}
                   </option>
                 ))}
               </select>
-
               <button
                 type="button"
                 onClick={() => {
-                  addStudent({ name: newStudentName, major: newStudentMajor });
-                  setNewStudentMajor('');
-                  setNewStudentName('');
+                  // TODO: Call dispatch method with an object containing type and payload for adding a new student
                 }}
               >
                 Add Student
